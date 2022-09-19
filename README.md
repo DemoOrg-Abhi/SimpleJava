@@ -1,1 +1,1 @@
-# SimpleJava
+# SimpleJava project
