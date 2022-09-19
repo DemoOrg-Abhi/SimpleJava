@@ -22,4 +22,4 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Invoke Jenkins
-      run: curl -I -u admin:admin http://localhost:8080/job/TestHttpTrigger/build?token=${{ secrets.Jenkins_Token }}
+      run: C:\Windows\System32\curl.exe -I -u admin:admin http://localhost:8080/job/TestHttpTrigger/build?token=${{ secrets.Jenkins_Token }}
