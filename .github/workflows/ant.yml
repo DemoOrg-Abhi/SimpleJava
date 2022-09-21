@@ -29,3 +29,5 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
         echo "$GITHUB_CONTEXT"
+        repo=${{ github.event.repository }}
+        echo ${repo}
