@@ -27,7 +27,8 @@ jobs:
     - name: Dump GitHub context
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
+        repo: 'test'
       run: |
         echo "$GITHUB_CONTEXT"
-        repo=${{ github.event.repository }}
-        echo ${repo}
+        ${{ env.repo }} = github.event.repository
+        echo  ${{ env.repo }}
