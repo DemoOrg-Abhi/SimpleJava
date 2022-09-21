@@ -33,6 +33,13 @@ jobs:
         echo ${{ github.event.repository }}
     
     - name: Call HTTP
+      env:
+        PAYLOAD: ''
+      run: |
+        PAYLOAD="$(jq 'repository' $GITHUB_EVENT_PATH)"
+        echo ${PAYLOAD}
+        
+    - name: Call HTTP
       uses: satak/webrequest-action@master
       with:
         url: https://smee.io/XcEp4bPuyjSAI4tZ
