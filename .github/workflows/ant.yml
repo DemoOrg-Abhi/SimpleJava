@@ -29,7 +29,7 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
         echo "$GITHUB_CONTEXT"
-        echo ${{ github.event.repository.created_at }}
+        echo "${{ github.event.repository.created_at }}"
           
     - name: Call HTTP
       uses: satak/webrequest-action@master
