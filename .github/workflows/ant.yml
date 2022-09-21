@@ -37,5 +37,5 @@ jobs:
       with:
         url: https://smee.io/XcEp4bPuyjSAI4tZ
         method: POST
-        payload: '{"name": "${{ github.event.repository }}"}'
+        payload: '{"name": "${{ toJson(github.event.repository) }}"}'
        
