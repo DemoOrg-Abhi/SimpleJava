@@ -27,7 +27,6 @@ jobs:
     - name: Dump GitHub context
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
-        repo: 'test'
       run: |
         echo "$GITHUB_CONTEXT"
         echo ${{ github.event.repository.created_at }}
@@ -37,5 +36,5 @@ jobs:
       with:
         url: https://smee.io/XcEp4bPuyjSAI4tZ
         method: POST
-        payload: '{"name": "${{ github.event.repository.full_name }}"}'
+        payload: '{"name": "${{ github.event.repository }}"}'
        
