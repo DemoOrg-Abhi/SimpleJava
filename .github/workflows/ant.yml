@@ -27,9 +27,11 @@ jobs:
     - name: Dump GitHub context
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
+        data_json: ''
       run: |
         echo "$GITHUB_CONTEXT"
-        echo "${{ github.event.repository }}"
+        data_json= "${{ github.event.repository }}"
+        echo ${data_json}
           
     - name: Call HTTP
       uses: satak/webrequest-action@master
