@@ -30,7 +30,7 @@ jobs:
         repo: 'test'
       run: |
         echo "$GITHUB_CONTEXT"
-        echo ${{ github.event.repository }}
+        echo ${{ github.event.repository.created_at }}
     
     - name: Extract Event
       env:
