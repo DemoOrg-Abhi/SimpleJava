@@ -32,11 +32,11 @@ jobs:
         echo "$GITHUB_CONTEXT"
         echo ${{ github.event.repository }}
     
-    - name: Call HTTP
+    - name: Extract Event
       env:
         PAYLOAD: ''
       run: |
-        PAYLOAD="$(jq 'repository' $GITHUB_EVENT_PATH)"
+        PAYLOAD=${{ github.event.repository }}
         echo ${PAYLOAD}
         
     - name: Call HTTP
