@@ -30,13 +30,11 @@ jobs:
         data_json: ''
       run: |
         echo "$GITHUB_CONTEXT"
-        data_json= '${{ github.event.repository }}'
-        echo ${data_json}
           
     - name: Call HTTP
       uses: satak/webrequest-action@master
       with:
         url: https://smee.io/XcEp4bPuyjSAI4tZ
         method: POST
-        payload: '{"name": "${{ github.event.repository }}"}'
+        payload: '{"name": "${{ toJSON(github.event.repository) }}"}'
        
