@@ -24,5 +24,17 @@ jobs:
     - name: Invoke Jenkins
       run: C:\Windows\System32\curl.exe -I -u admin:admin http://localhost:8080/job/TestHttpTrigger/build?token=${{ secrets.Jenkins_Token }}
   
-   
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
+         
+          
+    - name: Call HTTP
+      uses: satak/webrequest-action@master
+      with:
+        url: https://smee.io/XcEp4bPuyjSAI4tZ
+        method: POST
+        payload: '{"repo-payload": ${{ toJSON(github.event.repository) }}}'
        
