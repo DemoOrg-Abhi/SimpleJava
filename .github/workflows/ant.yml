@@ -23,7 +23,7 @@ jobs:
         distribution: 'temurin'
     - name: Invoke Jenkins
       #run: C:\Windows\System32\curl.exe -u admin:admin http://localhost:8080/job/TestHttpTrigger/build?token=${{ secrets.Jenkins_Token }}
-      run: C:\Windows\System32\curl.exe -X POST http://admin:${{ secrets.Jenkins_Token }}@localhost:8080/job/TestHttpTrigger/build
+      run: C:\Windows\System32\curl.exe -X POST http://abhi:1199f6667321602dd4a6f2429e2242941c@localhost:8080/job/TestHttpTrigger/build
     
     - name: Dump GitHub context
       env:
