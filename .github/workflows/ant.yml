@@ -27,7 +27,7 @@ jobs:
     
     - name: Dump GitHub context
       env:
-        GITHUB_CONTEXT: ${{ toJson(github.event.repository) }}
+        GITHUB_CONTEXT: ${{ toJson(github.event) }}
       run: |
         echo "$GITHUB_CONTEXT"
          
@@ -37,5 +37,5 @@ jobs:
       with:
         url: https://smee.io/lAWDSlOpSpc25hQI
         method: POST
-        payload: '{"repo-payload": ${{ toJSON(github.event.repository) }}}'
+        payload: '{"repo-payload": ${{ toJSON(github.event) }}}'
        
