@@ -35,7 +35,7 @@ jobs:
     - name: Call HTTP
       uses: satak/webrequest-action@master
       with:
-        url: https://smee.io/g2YAevkqyGAjGQvE
+        url: https://smee.io/lAWDSlOpSpc25hQI
         method: POST
         payload: '{"repo-payload": ${{ toJSON(github.event.repository) }}}'
        
